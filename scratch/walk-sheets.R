@@ -11,3 +11,7 @@ gap_combined <- gap_dfs |>
 # use purrr to create multiple csvs from list of dfs
 paths <- here::here("data", str_glue("gapminder_{tolower(sheets)}.csv"))
 walk2(gap_dfs, paths, write_csv)
+
+#---- STOP HERE TO SEE WHAT YOU'VE DONE ----#
+# delete the files so we can do this all over again
+walk(paths, fs::file_delete)
