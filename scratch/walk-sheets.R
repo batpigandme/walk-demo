@@ -13,5 +13,7 @@ paths <- here::here("data", str_glue("gapminder_{tolower(sheets)}.csv"))
 walk2(gap_dfs, paths, write_csv)
 
 #---- STOP HERE TO SEE WHAT YOU'VE DONE ----#
-# delete the files so we can do this all over again
+# if you don't want to open the data folder, you can see them with {fs}
+fs::dir_tree()
+# Now delete the files using `walk()` so we can do this all over again
 walk(paths, fs::file_delete)
