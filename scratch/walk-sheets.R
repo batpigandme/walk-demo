@@ -14,6 +14,12 @@ walk2(gap_dfs, paths, write_csv)
 
 #---- STOP HERE TO SEE WHAT YOU'VE DONE ----#
 # if you don't want to open the data folder, you can see them with {fs}
+# the whole project tree
 fs::dir_tree()
+# just what's in the data folder
+fs::dir_tree(here::here("data"))
+# can also see the files as a list (as opposed to a tree)
+fs::dir_ls(here::here("data"))
+
 # Now delete the files using `walk()` so we can do this all over again
 walk(paths, fs::file_delete)
