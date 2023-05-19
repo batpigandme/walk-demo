@@ -10,7 +10,7 @@ gap_combined <- gap_dfs |>
   list_rbind()
 
 # use purrr to create multiple CSVs from list of dfs
-# create subfolder with {fs} (if exists, does nothing)
+# create folder with {fs} (if exists, does nothing)
 fs::dir_create("data")
 paths <- here::here("data", str_glue("gapminder_{tolower(sheets)}.csv"))
 walk2(gap_dfs, paths, write_csv)
