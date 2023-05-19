@@ -6,7 +6,7 @@ ss <- gs4_example("gapminder")
 sheets <- sheet_names(ss)
 gap_dfs <- map(sheets, .f = \(x) read_sheet(ss, sheet = x))
 # combine the sheets into a single data frame
-gap_combined <- gap_dfs |> 
+gap_combined <- gap_dfs |>
   list_rbind()
 
 # use purrr to create multiple CSVs from list of dfs
